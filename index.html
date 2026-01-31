@@ -1,150 +1,177 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VK Filmycity – Latest Movies & Trailers</title>
-<meta name="description" content="VK Filmycity provides legally licensed movies, trailers, and HD downloads. Watch latest Bollywood, Hollywood & Web Series legally.">
-
-<!-- CSS START -->
-<style>
-  /* General Body */
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #0f0c29;
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-    color: white;
-  }
-
-  /* Header */
-  header {
-    background-color: #ff0044;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  }
-
-  /* Navigation Menu */
-  nav {
-    display: flex;
-    justify-content: center;
-    background-color: #1c1c1c;
-    padding: 10px 0;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 16px;
-    transition: 0.3s;
-  }
-
-  nav a:hover {
-    color: #ff0055;
-  }
-
-  /* Container for Movies */
-  .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-  }
-
-  .movies-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-  }
-
-  .movie-card {
-    background: #1e1e1e;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .movie-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(255,0,85,0.5);
-  }
-
-  .movie-card img {
-    width: 100%;
-    display: block;
-  }
-
-  .movie-info {
-    padding: 10px;
-    text-align: center;
-  }
-
-  .movie-info h3 {
-    font-size: 18px;
-    margin: 10px 0 5px;
-  }
-
-  .movie-info a {
-    display: inline-block;
-    margin: 5px;
-    padding: 8px 15px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-
-  .trailer-btn {
-    background-color: #00c6ff;
-    color: white;
-  }
-
-  .download-btn {
-    background-color: #00ff88;
-    color: black;
-  }
-
-  .movie-info a:hover {
-    opacity: 0.8;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #111;
-    font-size: 14px;
-    margin-top: 40px;
-  }
-
-  /* Responsive */
-  @media(max-width:600px){
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VK Filmycity – Latest Movies & Trailers</title>
+  <meta name="description" content="VK Filmycity provides legally licensed movies, trailers, and HD downloads. Watch Bollywood, Hollywood & Web Series legally." />
+  
+  <style>
+    /* CSS code yaha likha hai */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: white;
+    }
     header {
-      font-size: 24px;
+      background: #ff0044;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
     nav {
-      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      background: #1c1c1c;
+      padding: 10px;
+      flex-wrap: wrap;
     }
     nav a {
-      margin: 10px 0;
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      transition: 0.3s;
     }
-  }
-
-</style>
-<!-- CSS END -->
-
+    nav a:hover {
+      color: #ff0055;
+    }
+    .search-bar {
+      margin: 20px;
+      text-align: center;
+    }
+    .search-bar input {
+      padding: 10px;
+      width: 60%;
+      max-width: 400px;
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+    }
+    .categories {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+      flex-wrap: wrap;
+    }
+    .categories button {
+      background: #1e1e1e;
+      color: white;
+      border: none;
+      margin: 5px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .categories button:hover {
+      background: #ff0055;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .movies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+    .movie-card {
+      background: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .movie-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(255, 0, 85, 0.5);
+    }
+    .movie-card img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #333;
+    }
+    .movie-info {
+      padding: 10px;
+      text-align: center;
+    }
+    .movie-info h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+    .movie-info a {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 15px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .trailer-btn {
+      background: #00c6ff;
+      color: white;
+    }
+    .download-btn {
+      background: #00ff88;
+      color: black;
+    }
+    .movie-info a:hover {
+      opacity: 0.8;
+    }
+    .trending {
+      margin: 40px 0;
+    }
+    .trending h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .trending-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .trending-grid img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .trending-grid img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+    @media (max-width: 600px) {
+      header {
+        font-size: 24px;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 10px 0;
+      }
+      .search-bar input {
+        width: 80%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header -->
 <header>🎬 VK Filmycity</header>
 
-<!-- Navigation -->
 <nav>
   <a href="#">Home</a>
   <a href="#">Bollywood</a>
@@ -153,16 +180,33 @@
   <a href="#">Contact</a>
 </nav>
 
-<!-- Main Container -->
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search movies..." />
+</div>
+
+<div class="categories">
+  <button onclick="filterCategory('Bollywood')">Bollywood</button>
+  <button onclick="filterCategory('Hollywood')">Hollywood</button>
+  <button onclick="filterCategory('Web Series')">Web Series</button>
+  <button onclick="filterCategory('All')">All</button>
+</div>
+
+<div class="trending">
+  <h2>Top Trending</h2>
+  <div class="trending-grid">
+    <img src="images/trending1.webp" alt="Trending Movie 1" />
+    <img src="images/trending2.webp" alt="Trending Movie 2" />
+    <img src="images/trending3.webp" alt="Trending Movie 3" />
+    <img src="images/trending4.webp" alt="Trending Movie 4" />
+  </div>
+</div>
+
 <div class="container">
-
   <h2 style="text-align:center; margin-bottom:20px;">Latest Movies</h2>
-
-  <div class="movies-grid">
-
-    <!-- Movie Card 1 -->
-    <div class="movie-card">
-      <img src="movie-poster.webp" alt="Movie 1 Poster">
+  <div class="movies-grid" id="moviesGrid">
+    <!-- Movie Card Example -->
+    <div class="movie-card" data-category="Bollywood">
+      <img src="images/movie-poster.webp" alt="Movie 1 Poster" />
       <div class="movie-info">
         <h3>Movie 1 (2025)</h3>
         <a href="https://www.youtube.com" class="trailer-btn" target="_blank">▶ Trailer</a>
@@ -170,9 +214,8 @@
       </div>
     </div>
 
-    <!-- Movie Card 2 -->
-    <div class="movie-card">
-      <img src="movie-poster2.webp" alt="Movie 2 Poster">
+    <div class="movie-card" data-category="Hollywood">
+      <img src="images/movie-poster2.webp" alt="Movie 2 Poster" />
       <div class="movie-info">
         <h3>Movie 2 (2025)</h3>
         <a href="https://www.youtube.com" class="trailer-btn" target="_blank">▶ Trailer</a>
@@ -180,24 +223,42 @@
       </div>
     </div>
 
-    <!-- Movie Card 3 -->
-    <div class="movie-card">
-      <img src="movie-poster3.webp" alt="Movie 3 Poster">
+    <div class="movie-card" data-category="Web Series">
+      <img src="images/movie-poster3.webp" alt="Movie 3 Poster" />
       <div class="movie-info">
-        <h3>Movie 3 (2025)</h3>
+        <h3>Web Series 1</h3>
         <a href="https://www.youtube.com" class="trailer-btn" target="_blank">▶ Trailer</a>
-        <a href="https://vkfilmycity.com/download/movie3.mp4" class="download-btn">⬇ Download</a>
+        <a href="https://vkfilmycity.com/download/webseries1.mp4" class="download-btn">⬇ Download</a>
       </div>
     </div>
+  </div>
+</div>
 
-  </div> <!-- End Grid -->
-
-</div> <!-- End Container -->
-
-<!-- Footer -->
 <footer>
-⚖ VK Filmycity shares only legally licensed or public domain content. All rights reserved.
+  ⚖ VK Filmycity shares only legally licensed or public domain content. All rights reserved.
 </footer>
+
+<script>
+  // JavaScript code yaha likha hai
+  const searchInput = document.getElementById('searchInput');
+  const moviesGrid = document.getElementById('moviesGrid');
+  const movies = Array.from(moviesGrid.getElementsByClassName('movie-card'));
+
+  searchInput.addEventListener('keyup', function () {
+    const filter = searchInput.value.toLowerCase();
+    movies.forEach((movie) => {
+      const title = movie.querySelector('h3').innerText.toLowerCase();
+      movie.style.display = title.includes(filter) ? '' : 'none';
+    });
+  });
+
+  function filterCategory(category) {
+    movies.forEach((movie) => {
+      const movieCat = movie.dataset.category;
+      movie.style.display = category === 'All' || movieCat === category ? '' : 'none';
+    });
+  }
+</script>
 
 </body>
 </html>
