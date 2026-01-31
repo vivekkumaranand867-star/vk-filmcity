@@ -1,0 +1,6 @@
+<div class="movie-card">
+  <img src="images/avatar-fire-and-ash.webp" alt="Avatar Fire and Ash Poster" />
+  <h3>Avatar: Fire and Ash</h3>
+  <a href="https://linkmake.in/view/EAsS6VBRJ9" target="_blank" class="download-btn">⬇ Download</a>
+  <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" class="trailer-btn">▶ Trailer</a>
+</div>
